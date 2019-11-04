@@ -1,0 +1,417 @@
+Python
+basics of python
+1.Numbers and more in Python!
+ 1.) Types of Numbers in Python, 2.) Basic Arithmetic, 3.) Object Assignment in Python
+1.)Types of numbers
+# Python has various "types" of numbers (numeric literals). We'll mainly focus on integers and floating point numbers.Integers are just whole numbers, positive or negative. For example: 2 and -2 are examples of integers.Floating point numbers in Python are notable because they have a decimal point in them, or use an exponential (e) to define the number. For example 2.0 and -2.1.
+2.) Basic Arithmetic
+# Addition
+2+1
+# Subtraction
+2–1
+# Multiplication
+2*2
+# Division
+3/2
+# Powers
+2**3
+# Can also do roots this way
+4**0.5
+# Order of Operations followed in Python
+2 + 10 * 10 + 3
+# Can use parenthesis to specify orders
+(2+10) * (10+3)
+## Variable Assignments.Now that we've seen how to use numbers in Python as a calculator let's see how.Let's see a few examples of how we can do this.
+3.)Let's create an object called "a" and assign it the number 5
+a = 5
+#Python will treat it as the number 5.
+# Adding the objects
+a+a
+a = 10
+# Check
+a
+# Yes! Python allows you to write over assigned variable names. We can also use
+a
+# Use A to redefine A
+a = a + a
+# Check
+a
+# The names you use when creating these labels need to follow a few rules:
+# 1. Names can not start with a number.
+# 2. There can be no spaces in the name, use _ instead.
+# 3. Can't use any of these symbols :'",<>/?|\()!@#$%^&*~-+
+# Using variable names can be a very useful way to keep track of different variables in Python. 
+my_income = 100
+tax_rate = 0.1
+my_taxes = my_income*tax_rate
+# Show my taxes!
+my_taxes
+2.Strings
+ 1.) Creating Strings, 2.) Printing Strings, 3.) String Indexing and Slicing, 4.) String Properties, 5.) String Methods.
+1) Creating a String
+# single quotes or double quotes. For example:Single word
+'hello'
+# Entire phrase
+'This is also a string'
+# We can also use double quote
+"String built with double quotes"
+# Be careful with quotes!
+' I'm using single quotes, but will create an error'
+# The reason for the error above is because the single quote in I'm stopped the string. You can use combinations of double and single quotes to get the complete statement. 
+"Now I'm ready to use the single quotes inside a string!"
+# Now let's learn about printing strings!
+2.)Printing a String
+# strings, but the correct way to display strings in your output is by using a print function.We can simply declare a string.
+'Hello World'
+# note that we can't output multiple strings this way
+'Hello World 1'
+'Hello World 2'
+# We can use a print statement to print a string.
+print('Hello World 1')
+print('Hello World 2')
+print('Use \n to print a new line')
+print('\n')
+print('See what I mean?')
+# String Basics.We can also use a function called len() to check the length of a string!
+len('Hello World')
+3.)String Indexing
+# We know strings are a sequence, which means Python can use indexes to call
+# In Python, we use brackets [] after an object to call its index. We should also note that indexing starts at 0 for Python. Let's create a new object. Assign s as a string
+s = 'Hello World'
+#Check
+s
+# Print the object
+print(s)
+# Let's start indexing!Show first element (in this case a letter)
+s[0]
+# Next element
+s[1]
+# Next Element
+s[2]
+3.1)We can use a : to perform *slicing* which grabs everything
+# Grab everything past the first term all the way to the length of s which is len(s)
+s[1:]
+# Note that there is no change to the original s
+s
+# Grab everything UP TO the 3rd index
+s[:3]
+# Note the above slicing. Here we're telling Python to grab everything from 0 up to 3. It doesn't include the 3rd index.
+s[:]
+# We can also use negative indexing to go backwards.Last letter (one index behind 0 so it loops back around)
+s[-1]
+# Grab everything but the last letter
+s[:-1]
+# We can also use index and slice notation to grab elements of a sequence by a specified step size (the default is 1). For instance we can use two colons in a row and then a number specifying the frequency to grab elements.
+# Grab everything, but go in steps size of 1
+s[::1]
+# Grab everything, but go in step sizes of 2
+s[::2]
+# We can use this to print a string backwards
+s[::-1]
+4.) String Properties
+# Its important to note that strings have an important property known as immutability. This means that once a string is created, the elements within it can not be changed or replaced. For example:
+s
+# Let's try to change the first letter to 'x'
+s[0] = 'x'
+# Notice how the error tells us directly what we can't do,change the item assignment!
+# Something we can do is concatenate strings!
+s
+# Concatenate strings!
+s + ' concatenate me!'
+# We can reassign s completely though!
+s = s + ' concatenate me!'
+print(s)
+# We can use the multiplication symbol to create repetition!
+letter = 'z'
+letter*10
+5.)Basic Built-in String methods
+# Objects in Python usually have built-in methods. These methods are functions.inside the object (we will learn about these in much more depth later) that can perform actions or commands on the object itself.We call methods with a period and then the method name. Methods are in the form:object.method(parameters)
+# Where parameters are extra arguments we can pass into the method.
+# Here are some examples of built-in methods in strings:
+# Upper Case a string
+s.upper()
+# Lower case
+s.lower()
+# Split a string by blank space .
+s.split()
+3.Lists
+1.) Creating lists, 2.) Indexing and Slicing Lists, 3.) Basic List Methods, 4.) Nesting Lists,5.) Introduction to List Comprehensions
+1.)Creating lists
+Lists are constructed with brackets [] and commas separating every element in the list.Assign a list to an variable named my_list
+my_list = [1,2,3]
+# We just created a list of integers, but lists can actually hold different object types. For example:
+my_list = ['A string',23,100.232,'o']
+# Just like strings, the len() function will tell you how many items are in the sequence of the list.
+len(my_list)
+2.)Indexing and Slicing 
+# Indexing and slicing works just like in strings. Let's make a new list to remind ourselves of how this works:
+my_list = ['one','two','three',4,5]
+# Grab element at index 0
+my_list[0]
+# Grab index 1 and everything past it
+my_list[1:]
+# Grab everything UP TO index 3
+my_list[:3]
+# We can also use + to concatenate lists, just like we did for strings.
+my_list + ['new item']
+# Note: This doesn't actually change the original list!
+my_list
+# You would have to reassign the list to make the change permanent.
+# Reassign
+my_list = my_list + ['add new item permanently']
+my_list
+# We can also use the * for a duplication method similar to strings:Make the list double.
+my_list * 2
+# Again doubling not permanent
+my_list
+3.)Basic List Methods # If you are familiar with another programming language, you might start to draw parallels between arrays in another language and lists in Python. Lists in Python however, tend to be more flexible than arrays in other languages for a two good reasons: they have no fixed size (meaning we don't have to specify how big a list will be), and they have no fixed type constraint (like we've seen above).
+# Create a new list
+l = [1,2,3]
+# Use the .append() method to permanently add an item to the end of a list:Append
+l.append('append me!')
+# Show
+print(l)
+# Use "pop" to "pop off" an item from the list. By default pop takes off the last index, but you can also specify which index to pop off. Let's see an example:Pop off the 0 indexed item
+l.pop(0)
+# Show
+print(l)
+# Assign the popped element, remember default popped index is -1
+popped_item = l.pop()
+popped_item
+# Show remaining list
+l
+# It should also be noted that lists indexing will return an error if there is no element at that index. For example:
+l[100]
+# We can use the **sort** method and the **reverse** methods to also effect your lists:
+new_list = ['a','e','x','b','c']
+#Show
+new_list
+# Use reverse to reverse order (this is permanent!)
+new_list.reverse()
+new_list
+# Use sort to sort the list (in this case alphabetical order,but for numbers it will go ascending)
+new_list.sort()
+new_list
+4.)Nesting Lists 
+# A great feature of of Python data structures is that they support nesting.This means we can have data structures within data structures.For example: A list inside a list.
+# Let's make three lists
+lst_1=[1,2,3]
+lst_2=[4,5,6]
+lst_3=[7,8,9]
+# Make a list of lists to form a matrix
+matrix = [lst_1,lst_2,lst_3]
+# Show
+matrix
+# Now we can again use indexing to grab elements, but now there are two levels for the index. The items in the matrix object, and then the items inside that list!Grab first item in matrix object
+matrix[0]
+# Grab first item of the first item in the matrix object
+matrix[0][0]
+5.)List Comprehensions
+# Python has an advanced feature called list comprehensions. They allow for quick construction of lists. To fully understand list comprehensions we need to understand for loops. 
+# But in case you want to know now, here are a few examples!Build a list comprehension by deconstructing a for loop within a []
+first_col = [row[0] for row in matrix]
+first_col
+# We used list comprehension here to grab the first element of every row in the matrix object.
+4.Dictionaries
+1.) Constructing a Dictionary, 2.) Accessing objects from a dictionary, 3.) Nesting Dictionaries, 4.) Basic Dictionary Methods
+# So what are mappings? Mappings are a collection of objects that are stored by a key, unlike a sequence that stored objects by their relative position.This is an important distinction, since mappings won't retain order since they have objects defined by a key.
+# A Python dictionary consists of a key and then an associated value. That value can be almost any Python object.
+1.)Constructing a Dictionary
+# Let's see how we can construct dictionaries to get a better understanding of how they work!Make a dictionary with {} and : to signify a key and a value
+my_dict = {'key1':'value1','key2':'value2'}
+# Call values by their key
+my_dict['key2']
+# Its important to note that dictionaries are very flexible in the data types they can hold. For example:
+my_dict = {'key1':123,'key2':[12,23,33],'key3':['item0','item1','item2']}
+2.)call items from the dictionary
+my_dict['key3']
+# Can call an index on that value
+my_dict['key3'][0]
+#Can then even call methods on that value
+my_dict['key3'][0].upper()
+# We can effect the values of a key as well. For instance:
+my_dict['key1']
+# Subtract 123 from the value
+my_dict['key1'] = my_dict['key1'] - 123
+#Check
+my_dict['key1']
+# A quick note, Python has a built-in method of doing a self subtraction or addition (or multiplication or division). We could have also used += or -= for the above statement. For example:Set the object equal to itself minus 123
+my_dict['key1'] -= 123
+my_dict['key1']
+# We can also create keys by assignment. For instance if we started off with an empty dictionary, we could continually add to it:Create a new dictionary
+d = {}
+# Create a new key through assignment
+d['animal'] = 'Dog'
+# Can do this with any object
+d['answer'] = 42
+#Show
+d
+3.)Nesting with Dictionaries # Hopefully your starting to see how powerful Python is with its flexibility of nesting objects and calling methods on them. Let's see a dictionary nested inside a dictionary:Dictionary nested inside a dictionary nested in side a dictionary
+d = {'key1':{'nestkey':{'subnestkey':'value'}}}
+# Keep calling the keys
+d['key1']['nestkey']['subnestkey']
+ 4.)A few Dictionary Methods 
+# There are a few methods we can call on a dictionary.Let's get a quick introduction to a few of them:Create a typical dictionary.
+d = {'key1':1,'key2':2,'key3':3}
+# Method to return a list of all keys
+d.keys()
+# Method to grab all values
+d.values()
+# Method to return tuples of all items (we'll learn about tuples soon)
+d.items()
+5.Tuples, Sets, and Booleans
+1.) Constructing Tuples,2.) Basic Tuple Methods, 3.) Immutability,4.) When to Use Tuples.
+1.)Constructing Tuples
+he construction of a tuples use () with elements separated by commas. For example:
+# Can create a tuple with same types
+t = (1,2,3)
+# Check len just like a list
+len(t)
+# Can also mix object types
+t = ('one',2)
+# Show
+t
+# Use indexing just like we did in lists
+t[0]
+# Slicing just like a list
+t[-1]
+2.) Basic Tuple Methods 
+# Tuples have built-in methods, but not as many as lists do.Lets look at two of them:Use .index to enter a value and return the index
+t.index('one')
+# Use .count to count the number of times a value appears
+t.count('one')
+3.) Immutability # It can't be stressed enough that tuples are immutable.
+t[0]= 'change'
+# Because of this immutability, tuples can't grow.Once a tuple is made we can not add to it.
+t.append('nope')
+4.) When to use Tuples 
+# tuples are not used as often as lists in programming,but are used when immutability is necessary. If in your program you are passing around an object and need to make sure it does not get changed, then tuple become your solution. It provides a convenient source of data integrity.You should now be able to create and use tuples in your programming as well as have an understanding of their immutability.
+6.SETS AND BOOLEANS 
+1.) Sets # Sets are an un-ordered collection of *unique* elements. We can construct them by using the set() function. Let's go ahead and make a set to see how it works
+x = set()
+# We add to sets with the add() method
+x.add(1)
+#Show
+x
+# Note the curly brackets. This does not indicate a dictionary! Although you can draw analogies as a set being a dictionary with only keys.
+# We know that a set has only unique entries. So what happens when we try to add something that is already in a set?Add a different element
+x.add(2)
+#Show
+x
+# Try to add the same element
+x.add(1)
+#Show
+x
+# Notice how it won't place another 1 there. That's because a set is only concerned with unique elements! We can cast a list with multiple repeat elements to a set to get the unique elements. For example:Create a list with repeats.
+l = [1,1,2,2,3,4,5,6,1,1]
+# Cast as set to get unique values
+set(l)
+2.) Booleans # Python comes with Booleans (with predefined True and False displays that are basically just the integers 1 and 0). It also has a placeholder object called None. Let's walk through a few quick examples of Booleans (we will dive deeper into them later in this course).Set object to be a boolean
+a = True
+#Show
+a
+# Output is boolean
+1 > 2
+# We can use None as a placeholder for an object that we don't want to reassign yet:None placeholder
+b = None
+7.if,elif,else Statements
+if Statements in Python allows us to tell the computer to perform alternative actions based on a certain set of results.Verbally, we can imagine we are telling the computer:
+#"Hey if this case happens, perform some action. Else if another case happens, perform some other action. Else - none of the above cases happened, perform this action"
+if True:
+print('It was true!')
+# Let's add in some else logic:In[5]:
+x = False
+if x:
+print('x was True!')
+else:
+print('I will be printed in any case where x is not true')
+# Let's get a fuller picture of how far if, elif, and else can take us!We write this out in a nested structure. Take note of how the if,elif,and else line up in the code. This can help you see what if is related to what elif or else statements.
+loc = 'Bank'
+if loc == 'Auto Shop':
+print ('Welcome to the Auto Shop!')
+elif loc == 'Bank':
+print ('Welcome to the bank!')
+else:
+print ("Where are you?")
+# Note how the nested if statements are each checked until a True boolean causes the nested code below it to run. You should also note that you can put in as many elif statements as you want before you close off with an else.Let's create two more simple examples for the if,elif, and else statements:
+person = 'Sammy'
+if person == 'Sammy':
+print ('Welcome Sammy!')
+else:
+print ("Welcome, what's your name?")
+# example
+person = 'George'
+if person == 'Sammy':
+print ('Welcome Sammy!')
+elif person =='George':
+print ("Welcome George!")
+else:
+print ("Welcome, what's your name?")
+8.for Loops
+*for** loop acts as an iterator in Python, it goes through items that are in a *sequence* or any other iterable item. Objects that we've learned about that we can iterate over include strings,lists,tuples, and even built in iterables for dictionaries, such as the keys or values.
+We'll learn how to automate this sort of list in the next lecture
+l = [1,2,3,4,5,6,7,8,9,10]
+for num in l:
+print(num)
+#Example 2   Let's print only the even numbers from that list!
+for num in l:
+if num % 2 == 0:
+print(num)
+# We could have also put in else statement in there:
+for num in l:
+if num % 2 == 0:
+print (num)
+else:
+print('Odd number')
+# For example, lets create a for loop that sums up the list:Start sum at zero
+list_sum = 0
+for num in l:
+list_sum = list_sum + num
+print(list_sum)
+# We've used for loops with lists, how about with strings?Remember strings are a sequence so when we iterate through them we will be accessing each item in that string.
+for letter in 'This is a string.':
+print(letter)
+# Let's now look at how a for loop can be used with a tuple:
+tup = (1,2,3,4,5)
+for t in tup:
+print(t)
+# Tuples have a special quality when it comes to **for** loops.If you are iterating through a sequence that contains tuples,the item can actually be the tuple itself, this is an example of *tuple unpacking*. During the **for** loop we will be unpacking the tuple inside of a sequence and we can access the individual items inside that tuple!
+l = [(2,4),(6,8),(10,12)]
+for tup in l:
+print (tup)
+# Now with unpacking!
+for (t1,t2) in l:
+print (t1)
+# Let's start exploring iterating through Dictionaries to explore this further!
+# Example 7
+d = {'k1':1,'k2':2,'k3':3}
+for item in d:
+print (item)
+9.while loops
+The **while** statement in Python is one of most general ways to perform iteration. A **while** statement will repeatedly execute a single statement or group of statements as long as the condition is true. The reason it is called a 'loop' is because the code statements are looped through over and over again until the condition is no longer met.
+x = 0
+while x < 10:
+print ('x is currently: ',x)
+print (' x is still less than 10, adding 1 to x')
+x+=1
+else:
+print ('All Done!')
+Thinking about **break** and **continue** statements, the general format of the while loop looks like this:
+# while test:
+# code statement
+# if test:
+# break
+# if test:
+# continue
+# else:
+x = 0
+while x < 10:
+print('x is currently: ',x)
+print(' x is still less than 10, adding 1 to x')
+x+=1
+if x ==3:
+print('Breaking because x==3')
+break
+else:
+print('continuing…')
+continue
